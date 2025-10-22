@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: class-booking-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - class-booking-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: class-booking-api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      MONGODB_URI: mongodb://mongodb:27017/class-booking
+      JWT_SECRET: ${JWT_SECRET:-fallback-secret}
+      PORT: ${PORT:-3000}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    networks:
+      - class-booking-network
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+volumes:
+  mongodb_data:
+
+networks:
+  class-booking-network:
+    driver: bridge
