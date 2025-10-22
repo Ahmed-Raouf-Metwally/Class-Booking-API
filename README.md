@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🏋️ Class Booking API
 
 A complete backend API for fitness class booking system built with NestJS, MongoDB, and JWT authentication.
@@ -67,3 +68,7 @@ A complete backend API for fitness class booking system built with NestJS, Mongo
 git clone <repository-url>
 cd class-booking-api
 
+=======
+# Class-Booking-API
+NestJS backend for fitness class booking. Features user auth, credit system, class management, and booking with business rules. MongoDB, JWT, Swagger docs.
+>>>>>>> da73b9c93eb62f6b3ec2030d1c5008f234e8f869
