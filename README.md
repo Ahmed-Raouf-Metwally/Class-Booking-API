@@ -102,3 +102,68 @@ http://localhost:3000
 ```bash 
 http://localhost:3000/api
 ```
+
+## ⚙️ Environment Configuration
+### Create `.env` file in root directory:
+```bash 
+# Database
+MONGODB_URI=mongodb://localhost:27017/class-booking
+
+# JWT
+JWT_SECRET=your-jwt-secret-key
+
+# Server
+PORT=3000
+NODE_ENV=development
+
+# CORS
+CORS_ORIGIN=http://localhost:3001
+```
+
+## 🧪 Testing
+```bash
+# Unit tests
+npm test
+
+# Test coverage
+npm run test:cov
+
+# Watch mode
+npm run test:watch
+
+# e2e tests
+npm run test:e2e
+```
+
+## Class Schema
+```bash
+{
+  title: string;
+  description: string;
+  instructor: string;
+  startTime: Date;
+  endTime: Date;
+  maxParticipants: number;
+  currentParticipants: number;
+  creditsRequired: number;
+  isActive: boolean;
+  participants: ObjectId[];
+  createdAt: Date;
+  updatedAt: Date;
+}
+```
+
+## Booking Schema
+```bash
+{
+  user: ObjectId;
+  class: ObjectId;
+  status: 'confirmed' | 'cancelled';
+  bookedAt: Date;
+  cancelledAt: Date;
+  creditsUsed: number;
+  creditsRefunded: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
+```
