@@ -70,6 +70,8 @@ cd class-booking-api
 ### 2. Install dependencies
 ```bash
 npm install
+```
+
 
 ### 3. Environment setup
 ```bash 
@@ -78,7 +80,7 @@ cp .env.example .env
 
 # Edit with your configuration
 nano .env
-
+```
 ### 4. Start the application
 ```bash 
 # Development mode
@@ -87,11 +89,11 @@ npm run start:dev
 # Production mode
 npm run build
 npm run start:prod
-
+```
 ### 5. Access the API
 ```bash 
 http://localhost:3000
-
+```
 
 ## 📚 API Documentation
 
@@ -99,50 +101,4 @@ http://localhost:3000
 
 ```bash 
 http://localhost:3000/api
-
-
-##🔌 API Endpoints
-Authentication
-POST /auth/register - Register new user
-
-POST /auth/login - Login user
-
-Users
-GET /users/profile - Get user profile (Protected)
-
-PATCH /users/credits - Add credits to user (Protected)
-
-GET /users/credits - Get user credits (Protected)
-
-Classes
-GET /classes - Get all active classes
-
-GET /classes/:id - Get specific class
-
-POST /classes - Create new class (Protected)
-
-PATCH /classes/:id - Update class (Protected)
-
-DELETE /classes/:id - Delete class (Protected)
-
-GET /classes/available - Get available classes
-
-GET /classes/:id/participants - Get class participants
-
-Bookings
-POST /bookings - Book a class (Protected)
-
-GET /bookings - Get user bookings (Protected)
-
-GET /bookings/:id - Get specific booking (Protected)
-
-DELETE /bookings/:id - Cancel booking (Protected)
-
-Monitoring
-GET /health - Health check
-
-GET /health/detailed - Detailed health information
-
-GET /metrics - Prometheus metrics
-
-GET /info - API information
+```
